@@ -2,6 +2,7 @@ import './App.scss'
 import { useState } from 'react'
 import { Header } from  './components/Header.tsx'
 import { TodoForm } from  './components/TodoForm.tsx'
+import { TodoList } from './components/TodoList.tsx'
 
 function App() {
   const [tasks, setTasks] = useState<string[]>([])
@@ -16,6 +17,7 @@ function App() {
     <main>
       <Header />
       <TodoForm onAddTask={handleAddTask} />
+      <TodoList tasks={tasks} />
     </main>
   )
 }
