@@ -3,14 +3,20 @@ import { useState } from 'react'
 import { Header } from  './components/Header.tsx'
 import { TodoForm } from  './components/TodoForm.tsx'
 import { TodoList } from './components/TodoList.tsx'
+import type { Task } from './components/TodoList.tsx'
 
 function App() {
-  const [tasks, setTasks] = useState<string[]>([])
+  const [tasks, setTasks] = useState<Task[]>([])
 
   const handleAddTask = (newTask: string) => {
     if (!newTask.trim()) return
-    setTasks(prev => [...prev, newTask])
-    // console.log("Tarefa adicionada:", newTask)
+
+    const task: Task = {
+      id: crypto.randomUUID(),
+      name: newTask
+    }
+
+    setTasks(prev => [...prev, task])
   }
 
   return(

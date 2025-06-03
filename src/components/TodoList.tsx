@@ -1,13 +1,18 @@
+export type Task = {
+  id: string
+  name: string
+}
+
 type TodoListProps = {
-  tasks: string[]
+  tasks: Task[]
 }
 
 export function TodoList({ tasks }: TodoListProps) {
   return (
     <ul>
-      {tasks.map((task, index) => (
-        <li key={index}>
-          {task}
+      {tasks.map((task) => (
+        <li key={task.id}>
+          {task.name}
         </li>
       ))}
     </ul>
