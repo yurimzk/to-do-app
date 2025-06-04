@@ -9,12 +9,17 @@ type TodoListProps = {
 
 export function TodoList({ tasks }: TodoListProps) {
   return (
-    <ul className="flex flex-col gap-1 ">
+    <ul className="mt-8 flex flex-col items-center gap-2">
       {tasks.map((task) => (
-        <li key={task.id} className="flex justify-between text-gray-800" >
-          {task.name}
-          <input type="checkbox" name={task.name} id={task.id} className="w-4 h-4" />
-        </li>
+        <li key={task.id} className="grid grid-cols-[1fr_auto] items-center w-full max-w-md px-4">
+        <span className="text-gray-800">{task.name}</span>
+        <input
+          type="checkbox"
+          id={task.id}
+          name={task.name}
+          className="w-4 h-4"
+        />
+      </li>
       ))}
     </ul>
   )
