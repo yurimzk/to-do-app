@@ -21,7 +21,7 @@ export function TodoForm({ onAddTask }: TodoFormProps) {
       placeholder="New task"
       value={input}
       onChange={(e) => setInput(e.target.value)}
-      className="border-2 rounded-lg px-1 py-0.5 placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-800 hover:ring-1 hover:ring-gray-800" />
+      className="border-2 rounded-lg px-1 py-0.5 w-full max-w-md placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-800 hover:ring-1 hover:ring-gray-800" />
       <button type="submit" className="w-6 h-6 border-2 rounded-full border-gray-300 flex justify-center self-center opacity-60 hover:opacity-100">
         <Plus className="w-4 h-4 self-center" />
       </button>
